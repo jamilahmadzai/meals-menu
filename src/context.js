@@ -1,13 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { useCallback } from "react";
+import paginate from "./pagination";
 
 const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [searchItem, setSearchItem] = useState("a");
   const [meals, setMeals] = useState([]);
 
@@ -29,7 +30,7 @@ const AppProvider = ({ children }) => {
             category: strCategory,
           };
         });
-        setMeals(newMeals);
+        setMeals(paginate(newMeals));
       } else {
         setMeals([]);
       }
