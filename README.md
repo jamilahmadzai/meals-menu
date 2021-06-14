@@ -11,4 +11,4 @@ Made a menu app in react that fetches the data from external api and display all
 - Rendering a list
 - Pagination in react
 
-[Click Here for Demo](https://meals-menu.web.app/)
+[Click Here for Demo](https://meals-menu-7a8b6.web.app/)
